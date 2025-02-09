@@ -72,45 +72,53 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Meta />
       </head>
       <body>
-        <div className="p-2 flex gap-2 text-lg">
-          <Link
-            to="/"
-            activeProps={{
-              className: "font-bold",
-            }}
-            activeOptions={{ exact: true }}
-          >
-            Home
-          </Link>{" "}
-          <Link
-            to="/cocktail"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            Cocktails
-          </Link>{" "}
-          <Link
-            to="/favorites"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            Favorites
-          </Link>{" "}
-          <Link
-            to="/search"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            Search
-          </Link>
+        <div className="min-h-screen bg-primary-50">
+          <nav className="bg-primary-500 text-white p-4 flex gap-4 text-lg shadow-md">
+            <Link
+              to="/"
+              activeProps={{
+                className: "font-bold text-accent-300",
+              }}
+              activeOptions={{ exact: true }}
+              className="hover:text-accent-200 transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              to="/cocktail"
+              activeProps={{
+                className: "font-bold text-accent-300",
+              }}
+              className="hover:text-accent-200 transition-colors"
+            >
+              Cocktails
+            </Link>
+            <Link
+              to="/favorites"
+              activeProps={{
+                className: "font-bold text-accent-300",
+              }}
+              className="hover:text-accent-200 transition-colors"
+            >
+              Favorites
+            </Link>
+            <Link
+              to="/search"
+              activeProps={{
+                className: "font-bold text-accent-300",
+              }}
+              className="hover:text-accent-200 transition-colors"
+            >
+              Search
+            </Link>
+          </nav>
+          <hr className="border-primary-100" />
+          <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 text-slate-900">
+            {children}
+          </main>
+          <TanStackRouterDevtools position="bottom-right" />
+          <Scripts />
         </div>
-        <hr />
-        {children}
-        <TanStackRouterDevtools position="bottom-right" />
-        <Scripts />
       </body>
     </html>
   );
